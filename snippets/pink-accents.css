@@ -1,0 +1,35 @@
+/* Pink touches the AnuPpuccin Style Settings can't reach. */
+
+/* Sidebars, ribbon, tab bar: one step darker than the theme's Mantle/Crust. */
+body.theme-light {
+  --background-secondary: #e4cbd4;
+  --background-secondary-alt: #dbbfca;
+}
+
+/* Headings: bold pinks, one distinct shade per level.
+   Hue walks crimson → hot pink → magenta → orchid → plum → mauve as levels
+   deepen; lightness alternates dark/bright so neighbours never blur together.
+   Beats the theme's `.anp-header-color-toggle.anp-hN-* .app-container/.print`
+   (.print covers PDF export). */
+body.theme-light.anp-header-color-toggle .app-container,
+body.theme-light.anp-header-color-toggle .print {
+  --h1-color: #bd0f3b; /* crimson pink */
+  --h2-color: #f90680; /* hot pink */
+  --h3-color: #a5127e; /* deep magenta */
+  --h4-color: #d926cd; /* orchid */
+  --h5-color: #882c96; /* plum */
+  --h6-color: #a353c6; /* mauve */
+}
+
+/* Inline note title follows the theme's H1 color (set on .app-container). */
+.app-container {
+  --inline-title-color: var(--h1-color);
+}
+
+/* Completed [x] tasks: theme pink instead of the theme's green. */
+body.anp-custom-checkboxes [data-task=x] > input[type=checkbox]:checked,
+body.anp-custom-checkboxes [data-task=x] > p > input[type=checkbox]:checked,
+body.anp-custom-checkboxes [data-task=x][type=checkbox]:checked {
+  --checkbox-color: rgb(var(--ctp-pink));
+  --checkbox-color-hover: rgb(var(--ctp-pink));
+}
